@@ -3,7 +3,7 @@
 module TextExtractor
   class RtfHandler < ExternalCommandHandler
     DEFAULT = [
-        '/usr/bin/unrtf', '--text', '__FILE__'
+        '/usr/local/bin/unrtf', '--text', '__FILE__'
     ].freeze
     def initialize
       @content_type = 'application/rtf'

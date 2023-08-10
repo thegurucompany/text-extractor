@@ -7,7 +7,7 @@ module TextExtractor
         'application/msword'
     ]
     DEFAULT = [
-        '/usr/bin/catdoc', '-dutf-8', '__FILE__'
+        '/usr/local/bin/catdoc', '-dutf-8', '__FILE__'
     ]
     def initialize
       @content_types = CONTENT_TYPES

@@ -7,7 +7,7 @@ module TextExtractor
         'application/powerpoint',
     ]
     DEFAULT = [
-        '/usr/bin/catppt', '-dutf-8', '__FILE__'
+        '/usr/local/bin/catppt', '-dutf-8', '__FILE__'
     ]
     def initialize
       @content_types = CONTENT_TYPES

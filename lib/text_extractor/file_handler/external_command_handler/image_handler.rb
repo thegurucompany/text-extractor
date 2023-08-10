@@ -8,7 +8,7 @@ module TextExtractor
         'image/tiff'
     ]
     DEFAULT = [
-        '/usr/bin/tesseract', '__FILE__', 'stdout'
+        '/usr/local/bin/tesseract', '__FILE__', 'stdout'
     ].freeze
     def initialize
       @content_types = CONTENT_TYPES

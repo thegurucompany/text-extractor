@@ -7,7 +7,7 @@ module TextExtractor
       'application/excel'
     ]
     DEFAULT = [
-        '/usr/bin/xls2csv', '-dutf-8', '__FILE__'
+        '/usr/local/bin/xls2csv', '-dutf-8', '__FILE__'
     ]
     def initialize
       @content_types = CONTENT_TYPES

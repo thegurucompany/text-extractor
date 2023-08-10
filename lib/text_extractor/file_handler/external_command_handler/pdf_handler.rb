@@ -3,7 +3,7 @@
 module TextExtractor
   class PdfHandler < ExternalCommandHandler
     DEFAULT = [
-        '/usr/bin/pdftotext', '-enc', 'UTF-8', '__FILE__', '-'
+        '/usr/local/bin/pdftotext', '-enc', 'UTF-8', '__FILE__', '-'
     ].freeze
     def initialize
       @content_type = 'application/pdf'
