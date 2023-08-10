@@ -2,8 +2,6 @@
 
 module TextExtractor
   class Resolver
-    MAX_FULLTEXT_LENGTH = 4194304 # 4 megabytes
-
     def initialize(file, content_type = nil)
       @file = file
       @content_type = content_type
@@ -13,9 +11,7 @@ module TextExtractor
     # for the file type.
     def text
       if handler = find_handler and text = handler.text(@file)
-        text.gsub! /\s+/m, ' '
-        text.strip!
-        text.mb_chars.compose.limit(MAX_FULLTEXT_LENGTH).to_s
+        text.mb_chars.compose.to_s
       end
     end
 
