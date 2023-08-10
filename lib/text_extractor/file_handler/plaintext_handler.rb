@@ -8,7 +8,7 @@ module TextExtractor
     end
 
     def text(file)
-      TextExtractor::CodesetUtil.to_utf8 IO.read(file), 'UTF-8'
+      TextExtractor::CodesetUtil.to_utf8 file.read, 'UTF-8'
     end
   end
 end
