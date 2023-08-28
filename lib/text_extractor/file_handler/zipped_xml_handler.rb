@@ -37,7 +37,17 @@ module TextExtractor
       end
     end
 
+    def create_tempfile!(file)
+      return unless file.is_a? StringIO
+      
+      tempfile = Tempfile.new
+      tempfile.write(file.read)
+      tempfile.flush
+    end
+
     def text(file)
+      tempfile = create_tempfile! file
+      file = tempfile if tempfile.present?
       Zip::File.open(file) do |zip_file|
         zip_file.each do |entry|
           if entry.name == @file_name
@@ -45,6 +55,8 @@ module TextExtractor
           end
         end
       end
+      tempfile&.close
+      tempfile&.unlink
     end
 
     private
