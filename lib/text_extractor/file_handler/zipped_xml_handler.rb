@@ -48,15 +48,17 @@ module TextExtractor
     def text(file)
       tempfile = create_tempfile! file
       file = tempfile if tempfile.present?
+      result = nil
       Zip::File.open(file) do |zip_file|
         zip_file.each do |entry|
           if entry.name == @file_name
-            return xml_to_text entry.get_input_stream
+            result = xml_to_text entry.get_input_stream
           end
         end
       end
       tempfile&.close
-      tempfile&.unlink
+      tempfile&.unlink if tempfile.respond_to? :unlink
+      result
     end
 
     private
