@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'Extract plain text from most common office documents.'
   spec.description   = "Extract text from common office files. Based on the file's content type a command line tool is selected to do the job."
   spec.homepage      = 'https://github.com/planio-gmbh/text-extractor'
-  
+
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
@@ -20,9 +20,9 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'rubyzip', '~> 2.3.2'
   spec.add_dependency 'nokogiri', '~> 1.15.3'
-  spec.add_dependency 'activesupport', '~> 7.0.6'
+  spec.add_dependency 'activesupport', '~> 7.1', '>= 7.1.3.2'
 
-  spec.add_development_dependency "bundler", "~> 1.10"
+  spec.add_development_dependency "bundler", "~> 2.5"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec"
 end
