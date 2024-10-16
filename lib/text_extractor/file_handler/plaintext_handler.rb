@@ -2,7 +2,7 @@
 
 module TextExtractor
   class PlaintextHandler < FileHandler
-    CONTENT_TYPES = %w(text/csv text/plain)
+    CONTENT_TYPES = %w(text/csv text/plain application/json)
     def initialize
       @content_types = CONTENT_TYPES
     end
