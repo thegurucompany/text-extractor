@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'pathname'
+require 'tempfile'
+require 'stringio'
 
 module TextExtractor
   class ExternalCommandHandler < FileHandler
