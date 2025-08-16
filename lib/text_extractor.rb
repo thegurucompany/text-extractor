@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'active_support/core_ext/string'
+require 'active_support/core_ext/object/blank'
 
 require 'text_extractor/version'
 require 'text_extractor/configuration'

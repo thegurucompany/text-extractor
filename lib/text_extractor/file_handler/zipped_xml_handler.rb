@@ -3,6 +3,8 @@
 module TextExtractor
   # Handler base class for XML based (MS / Open / Libre) office documents.
   class ZippedXmlHandler < FileHandler
+    require 'tempfile'
+    require 'stringio'
     require 'zip'
     require 'nokogiri'
 
