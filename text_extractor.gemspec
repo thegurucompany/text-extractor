@@ -19,8 +19,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency 'rubyzip', '~> 2.3.2'
-  # Allow newer Nokogiri versions (incl. Ruby 3.4 support)
-  spec.add_dependency 'nokogiri', '>= 1.18', '< 2.0'
+  # Align with app ecosystem: lock Nokogiri to 1.17.x
+  spec.add_dependency 'nokogiri', '~> 1.17.2'
   # Support Rails/ActiveSupport 7 and 8
   spec.add_dependency 'activesupport', '>= 7.0', '< 9.0'
 
